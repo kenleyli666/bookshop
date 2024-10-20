@@ -7,9 +7,10 @@ const nextConfig = withPWA({
         skipWaiting: true,
         disable: process.env.NODE_ENV === 'development',
     },
+    basePath: '/bookshop', // Add this line if your site is served from a subdirectory
 });
 
-export default {
+module.exports = {
     ...nextConfig,
     images: {
         remotePatterns: [
