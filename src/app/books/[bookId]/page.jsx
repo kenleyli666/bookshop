@@ -42,7 +42,8 @@ export default function BookDetail({ params }) {
         setBook(foundBook);
       } catch (error) {
         console.error("Error fetching book details:", error);
-        return setBook(null);
+        alert("无法获取书籍信息，请稍后再试。");
+        setBook(null);
       }
     };
 
@@ -51,10 +52,6 @@ export default function BookDetail({ params }) {
 
   const handleSnackbarClose = () => {
     setSnackbarOpen(false);
-  };
-
-  const handleFavSnackbarClose = () => {
-    setFavSnackbarOpen(false);
   };
 
   const addToCart = () => {
@@ -72,36 +69,6 @@ export default function BookDetail({ params }) {
     } else {
       setCartItems([
         ...cartItems,
-        {
-          id: params.bookId,
-          cover_image: book.cover_image,
-          title: book.title,
-          price: book.price,
-          quantity: amount,
-          video: book.video,
-        },
-      ]);
-    }
-  };
-
-  const addToFavourite = () => {
-    setFavSnackbarOpen(true);
-
-    const existingItem = favouriteItems.find(
-      (item) => item.id === params.bookId
-    );
-
-    if (existingItem) {
-      setFavouriteItems(
-        favouriteItems.map((item) =>
-          item.id === params.bookId
-            ? { ...item, quantity: item.quantity + amount }
-            : item
-        )
-      );
-    } else if (book) {
-      setFavouriteItems([
-        ...favouriteItems,
         {
           id: params.bookId,
           cover_image: book.cover_image,
@@ -128,7 +95,7 @@ export default function BookDetail({ params }) {
       <Container
         maxWidth="md"
         className="mt-[20vh] min-h-[75vh]"
-        style={{marginTop:'20vh', minHeight:'75vh'}}
+        style={{ marginTop: '20vh', minHeight: '75vh' }}
       >
         <Box display="flex" flexDirection={{ xs: "column", md: "row" }} gap={4}>
           <Box flex={1}>
@@ -162,24 +129,16 @@ export default function BookDetail({ params }) {
                 type="number"
                 label="數量"
                 value={amount}
-                onChange={(e) =>
-                  setAmount(Math.max(1, parseInt(e.target.value)))
-                }
+                onChange={(e) => setAmount(Math.max(1, parseInt(e.target.value)))}
+                inputProps={{ min: 1 }}
               />
               <Button
                 variant="contained"
                 color="primary"
-                onClick={() => addToCart()}
+                onClick={addToCart}
               >
                 加入購物車
               </Button>
-              {/* <Button
-                variant="contained"
-                color="primary"
-                onClick={() => addToFavourite()}
-              >
-                加入收藏庫
-              </Button> */}
             </Box>
           </Box>
         </Box>
@@ -189,14 +148,8 @@ export default function BookDetail({ params }) {
           onClose={handleSnackbarClose}
           message={`${amount} 本 ${book.title} 書已加入購物車`}
         />
-        {/* <Snackbar
-          open={favSnackbarOpen}
-          autoHideDuration={3000}
-          onClose={handleFavSnackbarClose}
-          message={`${amount} 本 ${book.title} 書已加入收藏庫`}
-        /> */}
-        <Box my={4} >
-          <div dangerouslySetInnerHTML={{ __html: book.video }} style={{ width: '100%', height: '500px' }}/>
+        <Box my={4}>
+          <div dangerouslySetInnerHTML={{ __html: book.video }} style={{ width: '100%', height: '500px' }} />
         </Box>
       </Container>
     </>
