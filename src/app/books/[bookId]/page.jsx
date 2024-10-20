@@ -16,6 +16,15 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import FavouriteContext from "../../contextFavourite";
 import ShoppingCartContext from "../../contextCart";
 
+export async function generateStaticParams() {
+    const response = await fetch('https://kenleyli666.github.io/booksApi/books.json');
+    const data = await response.json();
+    
+    return data.books.map(book => ({
+        bookId: book.id.toString(),
+    }));
+}
+
 export default function BookDetail({ params }) {
   const router = useRouter();
   const { cartItems, setCartItems } = useContext(ShoppingCartContext);
@@ -23,7 +32,6 @@ export default function BookDetail({ params }) {
   const [book, setBook] = useState(null);
   const [amount, setAmount] = useState(1);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
-  const [favSnackbarOpen, setFavSnackbarOpen] = useState(false);
 
   useEffect(() => {
     const fetchBook = async () => {
@@ -148,9 +156,6 @@ export default function BookDetail({ params }) {
           onClose={handleSnackbarClose}
           message={`${amount} 本 ${book.title} 書已加入購物車`}
         />
-        <Box my={4}>
-          <div dangerouslySetInnerHTML={{ __html: book.video }} style={{ width: '100%', height: '500px' }} />
-        </Box>
       </Container>
     </>
   );
