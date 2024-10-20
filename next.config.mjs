@@ -7,6 +7,7 @@ const nextConfig = withPWA({
         skipWaiting: true,
         disable: process.env.NODE_ENV === 'development',
     },
+    basePath: '/bookshop', // 确保设置了 basePath
 });
 
 module.exports = {
