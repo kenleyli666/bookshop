@@ -1,0 +1,29 @@
+{
+  "name": "品誠書店",
+  "short_name": "品誠",
+  "description": "品誠書店",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#20a7db",
+  "theme_color": "#20a7db",
+  "icons": [
+    {
+      "src": "/images/iconThree.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/iconThree.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/aboutUs_img/aboutUsIcon.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",  
+      "form_factor": "wide"
+    }
+  ]
+}

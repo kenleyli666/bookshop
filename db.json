@@ -1,0 +1,94 @@
+{
+  "users": [
+    {
+      "id": "3eko",
+      "username": "Wong177",
+      "email": "wongwong717@mail.com",
+      "password": "000000",
+      "icon_image": "/images/icon_img/icon1.png"
+    },
+    {
+      "id": "19oo",
+      "username": "ChanHungT",
+      "email": "hungChant0@yahoo.com",
+      "password": "888888",
+      "icon_image": "/images/icon_img/icon2.png"
+    },
+    {
+      "id": "d0b8",
+      "username": "SiuChan123",
+      "email": "mrSiuisPROJJ@mail.com",
+      "password": "123123",
+      "icon_image": "/images/icon_img/icon3.png"
+    },
+    {
+      "id": "a199",
+      "username": "ERBSCHOOLuse",
+      "email": "12BBB3@mmm123.com",
+      "password": "456456",
+      "icon_image": "/images/icon_img/icon4.png"
+    }
+  ],
+  "orders": [
+    {
+      "id": "zzdx",
+      "date": "29-10-2020",
+      "username": "o7zSiu",
+      "product": [
+        {
+          "title": "西遊記",
+          "quantity": "2",
+          "price": "175"
+        },
+        {
+          "title": "紅樓夢",
+          "quantity": "1",
+          "price": "199"
+        }
+      ],
+      "contact": "Wong Tai Man",
+      "phone": "12346789",
+      "address": "HK CT MALL",
+      "total": "549",
+      "status": "Fulfilled"
+    },
+    {
+      "id": "c664",
+      "username": "o7zSiu",
+      "date": "15-10-2024",
+      "product": [
+        {
+          "id": "3",
+          "cover_image": "/images/book-ch-03.png",
+          "title": "《三國演義》",
+          "price": 300,
+          "quantity": 2
+        }
+      ],
+      "contact": "Mr leung kit jeng",
+      "phone": "ERB911",
+      "address": "ERB HK",
+      "total": "600.00",
+      "status": "進行中…"
+    },
+    {
+      "id": "339d",
+      "username": "ERBSCHOOLuse",
+      "date": "15-10-2024",
+      "product": [
+        {
+          "id": "2",
+          "cover_image": "/images/book-ch-02.png",
+          "title": "《紅樓夢》",
+          "price": 250,
+          "quantity": 2
+        }
+      ],
+      "contact": "ERB-MISS CHAN",
+      "phone": "erb9230123",
+      "address": "ERB SCHOOL ",
+      "total": "500.00",
+      "status": "進行中…"
+    }
+  ]
+}

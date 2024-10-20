@@ -1,0 +1,8 @@
+1009 - morning
+Finish useContext to build the Member-system.
+Change all stuffs to App(Server-rendering)
+---
+1009 noon
+changing everything to server side
+====
+1015 all functions done
