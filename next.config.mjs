@@ -16,7 +16,7 @@ module.exports = {
             {
                 protocol: 'https',
                 hostname: 'kenleyli666.github.io',
-                pathname: '/bookshop',
+                pathname: '/bookshop/**', 
             },
         ],
     },
