@@ -80,6 +80,7 @@ const ContactUs = () => {
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            className="truncate"
           >
           </iframe>
         </div>
