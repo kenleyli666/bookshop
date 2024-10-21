@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   try {
     // 使用 axios 获取远程 JSON 文件
     const response = await axios.get(booksUrl);
-    const books = response.data;
+    const books = response.data.books;
 
 
     // 查找匹配的 ID
